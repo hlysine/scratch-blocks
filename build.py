@@ -328,7 +328,15 @@ class Gen_compressed(threading.Thread):
       for group in [[CLOSURE_COMPILER_NPM], dash_args]:
         args.extend(filter(lambda item: item, group))
 
-      proc = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+      # shorten paths in arguments to avoid hitting the command line length limit
+      # in windows
+      newArgs = [];
+      for i in args:
+        if i.find("node_modules\google-closure-library") != -1:
+          i = i.replace("node_modules\google-closure-library", "cl")
+        newArgs.append(i)
+
+      proc = subprocess.Popen(newArgs, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
       (stdout, stderr) = proc.communicate()
 
       # Build the JSON response.
