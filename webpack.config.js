@@ -22,6 +22,9 @@ module.exports = [{
   optimization: {
     minimize: false
   },
+  resolve: {
+    symlinks: true
+  },
   performance: {
     hints: false
   }
@@ -46,6 +49,9 @@ module.exports = [{
       })
     ]
   },
+  resolve: {
+    symlinks: true
+  },
   plugins: []
 },
 {
@@ -57,6 +63,9 @@ module.exports = [{
   },
   optimization: {
     minimize: false
+  },
+  resolve: {
+    symlinks: true
   },
   performance: {
     hints: false
