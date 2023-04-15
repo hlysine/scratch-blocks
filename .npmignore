@@ -21,6 +21,7 @@ common.pyc
 
 # Build created files
 /gh-pages
+/docs
 
 # Exclude already built packages from testing with npm pack
 /scratch-blocks-*.{tar,tgz}

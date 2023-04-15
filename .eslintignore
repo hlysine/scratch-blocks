@@ -12,5 +12,6 @@
 /shim/*
 /dist/*
 /gh-pages/*
+/docs/*
 /webpack.config.js
 /build/*
